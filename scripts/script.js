@@ -62,6 +62,7 @@ function updateDots() {
 }
 
 slider.addEventListener("scroll", () => {
+  // Calculate the current slide index based on scroll position
   const slideIndex = Math.round(slider.scrollLeft / slider.clientWidth);
   if (slideIndex !== currentSlide) {
     currentSlide = slideIndex;
