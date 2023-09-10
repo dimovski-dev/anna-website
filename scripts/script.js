@@ -23,6 +23,9 @@ const dotsContainer = document.querySelector(".slider-dots");
 
 // Function to create slider dots dynamically
 function createSliderDots() {
+  // Clear existing dots
+  dotsContainer.innerHTML = "";
+
   sliderItems.forEach((_, index) => {
     const dot = document.createElement("span");
     dot.className = "slider-dot";
