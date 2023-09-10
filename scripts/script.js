@@ -75,5 +75,4 @@ window.addEventListener("resize", () => {
   updateDots();
 });
 
-// Initialize dots
 updateDots();
