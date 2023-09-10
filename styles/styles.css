@@ -284,4 +284,8 @@
     max-width: 320px;
     text-align-last: center;
   }
+
+  .footer-networks {
+    margin-top: 30px;
+  }
 }
