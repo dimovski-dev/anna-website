@@ -17,6 +17,7 @@
 
     padding-top: 80px;
   }
+
   .introduction-media-container::before,
   .extra-introduction-container::before {
     position: absolute;
@@ -58,7 +59,7 @@
 
   .introduction-price-list-container {
     text-align: center;
-    padding: 60px 20px 0 20px;
+    padding: 60px 20px 30px 20px;
   }
 
   .introduction-price-list-container > p {
@@ -74,6 +75,7 @@
     justify-content: center;
     gap: 30px;
   }
+
   .social-network-block {
     position: relative;
     width: 80px;
@@ -116,6 +118,7 @@
     text-transform: uppercase;
     font-size: 24px;
   }
+
   .catalog-accordion-container {
     background-color: #e5d1ca;
     border-radius: 20px;
@@ -138,6 +141,7 @@
   .accordion {
     padding-top: 20px;
   }
+
   .accordion-header {
     display: flex;
     align-items: center;
@@ -162,6 +166,7 @@
     font-weight: 300;
     line-height: 140%;
   }
+
   .accordion-price {
     border-radius: 60px;
     border: 1px solid rgba(0, 0, 0, 0.2);
@@ -172,11 +177,20 @@
     font-weight: 500;
   }
 
+  .accordion-price-one {
+    background-color: rgba(238, 228, 219, 0.3);
+  }
+
+  .accordion-price-two {
+    background-color: rgba(229, 209, 202, 0.3);
+  }
+
   .accordion-footer {
     display: flex;
     justify-content: center;
     padding: 30px 0 20px 0;
   }
+
   .accordion-container {
     display: none;
   }
