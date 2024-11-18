@@ -1,17 +1,31 @@
-const accordions = document.querySelectorAll(".accordion");
+const accordions = document.querySelectorAll(".accordion-header");
 const accordionContainers = document.querySelectorAll(".accordion-container");
 const accordionIcons = document.querySelectorAll(".accordion-icon");
 
-// Add click event listeners to each accordion header
-accordions.forEach((header, index) => {
+
+accordions.forEach((header) => {
   header.addEventListener("click", () => {
-    // Toggle the display property of the selected accordion container
-    if (accordionContainers[index].style.display === "block") {
-      accordionContainers[index].style.display = "none";
-      accordionIcons[index].src = "./assets/icons/IconPlus.svg"; // Change icon to plus
+    const container = header.nextElementSibling; 
+    const icon = header.querySelector(".accordion-icon"); 
+
+    if (container.style.display === "block") {
+      container.style.display = "none";
+      icon.src = "./assets/icons/IconPlus.svg"; 
     } else {
-      accordionContainers[index].style.display = "block";
-      accordionIcons[index].src = "./assets/icons/IconMinus.svg"; // Change icon to minus
+      const parentAccordion = header.closest(".accordion-container");
+      const siblingContainers = parentAccordion
+        ? parentAccordion.querySelectorAll(".accordion-container")
+        : [];
+
+      siblingContainers.forEach((sibling) => {
+        sibling.style.display = "none"; 
+        const siblingIcon = sibling.previousElementSibling.querySelector(".accordion-icon");
+        if (siblingIcon) siblingIcon.src = "./assets/icons/IconPlus.svg"; 
+      });
+
+
+      container.style.display = "block";
+      icon.src = "./assets/icons/IconMinus.svg"; 
     }
   });
 });
@@ -21,9 +35,8 @@ const slider = document.querySelector(".slider");
 const sliderItems = document.querySelectorAll(".slider-item");
 const dotsContainer = document.querySelector(".slider-dots");
 
-// Function to create slider dots dynamically
+
 function createSliderDots() {
-  // Clear existing dots
   dotsContainer.innerHTML = "";
 
   sliderItems.forEach((_, index) => {
@@ -34,7 +47,7 @@ function createSliderDots() {
   });
 }
 
-createSliderDots(); // Create dots when the page loads
+createSliderDots(); 
 
 function goToSlide(slideIndex) {
   if (slideIndex < 0 || slideIndex >= sliderItems.length) {
@@ -62,7 +75,6 @@ function updateDots() {
 }
 
 slider.addEventListener("scroll", () => {
-  // Calculate the current slide index based on scroll position
   const slideIndex = Math.round(slider.scrollLeft / slider.clientWidth);
   if (slideIndex !== currentSlide) {
     currentSlide = slideIndex;
@@ -70,11 +82,10 @@ slider.addEventListener("scroll", () => {
   }
 });
 
-// Initialize dots and update on window resize
 window.addEventListener("resize", () => {
   createSliderDots();
   updateDots();
 });
 
-// Initialize dots
+
 updateDots();

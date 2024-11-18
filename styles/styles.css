@@ -306,4 +306,21 @@
   .footer-networks {
     margin-top: 30px;
   }
+
+  .accordion .accordion {
+    margin-top: 15px; /* Отступ для вложенного аккордеона */
+    padding: 10px;
+    background-color: rgba(238, 228, 219, 0.5); /* Отличие в фоне */
+    border-radius: 10px;
+  }
+  
+  .accordion .accordion .accordion-title {
+    font-size: 20px; /* Уменьшенный размер шрифта для подзаголовков */
+  }
+  
+  .accordion .accordion .accordion-item {
+    font-size: 16px; /* Более мелкий текст */
+    line-height: 1.4;
+  }
+  
 }
